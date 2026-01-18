@@ -1,0 +1,11 @@
+{
+  "name": "tatu",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "deploy": "./deploy.sh"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
