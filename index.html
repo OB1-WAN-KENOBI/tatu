@@ -11,14 +11,14 @@
   <link rel="canonical" href="https://ob1-wan-kenobi.github.io/tatu/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Тату-мастер — Запись онлайн" />
+  <meta property="og:title" content="Тату-мастер в Самаре - Запись онлайн" />
   <meta property="og:description"
     content="Профессиональные татуировки от опытного мастера. Запись на сеанс онлайн через Telegram." />
   <meta property="og:url" content="https://ob1-wan-kenobi.github.io/tatu/" />
-  <meta property="og:site_name" content="Тату-мастер" />
+  <meta property="og:site_name" content="Tattoo Kotova" />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://ob1-wan-kenobi.github.io/tatu/og-image.jpg" />
+  <meta property="og:image" content="https://ob1-wan-kenobi.github.io/tatu/assets/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Тату-мастер" />
@@ -28,10 +28,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap" rel="stylesheet" />
 
   <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <meta name="theme-color" content="#8b5cf6" />
 
@@ -106,7 +106,7 @@
         </nav>
         <div class="header-actions">
           <div class="header-logo-image">
-            <img src="kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="header-logo-svg" />
+            <img src="assets/kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="header-logo-svg" />
           </div>
           <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
             <span></span>
@@ -351,7 +351,7 @@
             </iframe>
           </div>
           <div class="contacts-logo">
-            <img src="kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="logo-image" />
+            <img src="assets/kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="logo-image" />
           </div>
         </div>
       </div>
@@ -410,6 +410,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Image Modal -->
+  <div class="image-modal" id="imageModal">
+    <div class="image-modal-overlay"></div>
+    <div class="image-modal-content">
+      <button class="image-modal-close" id="imageModalClose" aria-label="Закрыть">×</button>
+      <img src="" alt="" id="imageModalImg" />
+    </div>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>
