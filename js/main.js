@@ -3,7 +3,7 @@ const portfolioItems = [
   {
     id: 1,
     image:
-      "/assets/images/tattoo-1.webp",
+      "assets/images/tattoo-1.webp",
     alt: "Тату в стиле реализм - портрет",
     title: "Реалистичный портрет",
   },
