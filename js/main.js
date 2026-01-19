@@ -63,6 +63,132 @@ const portfolioItems = [
     style: 'oldskool',
     title: 'Морская тематика',
   },
+  {
+    id: 10,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Реалистичная татуировка - цветы',
+    style: 'realism',
+    title: 'Реалистичные цветы',
+  },
+  {
+    id: 11,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Минималистичная татуировка - точки',
+    style: 'minimalism',
+    title: 'Точечный минимализм',
+  },
+  {
+    id: 12,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Олдскул татуировка - череп',
+    style: 'oldskool',
+    title: 'Классический череп',
+  },
+  {
+    id: 13,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Реалистичная татуировка - птица',
+    style: 'realism',
+    title: 'Реалистичная птица',
+  },
+  {
+    id: 14,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Минималистичная татуировка - стрелки',
+    style: 'minimalism',
+    title: 'Геометрические стрелки',
+  },
+  {
+    id: 15,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Олдскул татуировка - сердце',
+    style: 'oldskool',
+    title: 'Сердце в олдскуле',
+  },
+  {
+    id: 16,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Реалистичная татуировка - пейзаж',
+    style: 'realism',
+    title: 'Реалистичный пейзаж',
+  },
+  {
+    id: 17,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Минималистичная татуировка - волны',
+    style: 'minimalism',
+    title: 'Волны минимализм',
+  },
+  {
+    id: 18,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Олдскул татуировка - ласточка',
+    style: 'oldskool',
+    title: 'Ласточка олдскул',
+  },
+  {
+    id: 19,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Реалистичная татуировка - портрет девушки',
+    style: 'realism',
+    title: 'Портрет в реализме',
+  },
+  {
+    id: 20,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Минималистичная татуировка - звезды',
+    style: 'minimalism',
+    title: 'Звездное небо',
+  },
+  {
+    id: 21,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Олдскул татуировка - кинжал',
+    style: 'oldskool',
+    title: 'Кинжал олдскул',
+  },
+  {
+    id: 22,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Реалистичная татуировка - дракон',
+    style: 'realism',
+    title: 'Реалистичный дракон',
+  },
+  {
+    id: 23,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Минималистичная татуировка - треугольники',
+    style: 'minimalism',
+    title: 'Геометрические формы',
+  },
+  {
+    id: 24,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Олдскул татуировка - змея',
+    style: 'oldskool',
+    title: 'Змея в олдскуле',
+  },
+  {
+    id: 25,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Реалистичная татуировка - лес',
+    style: 'realism',
+    title: 'Лесной пейзаж',
+  },
+  {
+    id: 26,
+    image: 'https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=800&q=80',
+    alt: 'Минималистичная татуировка - луна',
+    style: 'minimalism',
+    title: 'Лунная тематика',
+  },
+  {
+    id: 27,
+    image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80',
+    alt: 'Олдскул татуировка - якорь с лентой',
+    style: 'oldskool',
+    title: 'Классический якорь',
+  },
 ];
 
 // Reviews data
@@ -106,8 +232,10 @@ const reviews = [
 
 // Portfolio functionality
 let activeFilter = 'all';
+let currentPage = 1;
+const itemsPerPage = 9;
 
-function renderPortfolio(filter = 'all') {
+function renderPortfolio(filter = 'all', page = 1) {
   const gallery = document.getElementById('gallery');
   if (!gallery) return;
 
@@ -115,14 +243,77 @@ function renderPortfolio(filter = 'all') {
     ? portfolioItems
     : portfolioItems.filter(item => item.style === filter);
 
-  gallery.innerHTML = filteredItems.map(item => `
-    <div class="gallery-item" data-style="${item.style}">
-      <div class="gallery-image-wrapper">
-        <img src="${item.image}" alt="${item.alt}" loading="lazy">
+  const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+  currentPage = page;
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const itemsToShow = filteredItems.slice(startIndex, endIndex);
+
+  // Fade out animation
+  gallery.style.opacity = '0';
+  gallery.style.transform = 'translateY(20px)';
+  
+  setTimeout(() => {
+    gallery.innerHTML = itemsToShow.map(item => `
+      <div class="gallery-item" data-style="${item.style}">
+        <div class="gallery-image-wrapper">
+          <img src="${item.image}" alt="${item.alt}" loading="lazy">
+        </div>
+        <p class="gallery-title">${item.title}</p>
       </div>
-      <p class="gallery-title">${item.title}</p>
-    </div>
-  `).join('');
+    `).join('');
+
+    // Fade in animation
+    requestAnimationFrame(() => {
+      gallery.style.opacity = '1';
+      gallery.style.transform = 'translateY(0)';
+    });
+  }, 200);
+
+  // Update pagination
+  updatePagination(totalPages, page);
+}
+
+function updatePagination(totalPages, currentPage) {
+  const pagination = document.getElementById('portfolioPagination');
+  if (!pagination) return;
+
+  pagination.innerHTML = '';
+
+  // Previous button
+  const prevButton = document.createElement('button');
+  prevButton.className = 'pagination-button';
+  prevButton.textContent = '‹';
+  prevButton.disabled = currentPage === 1;
+  prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+      renderPortfolio(activeFilter, currentPage - 1);
+    }
+  });
+  pagination.appendChild(prevButton);
+
+  // Page numbers
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement('button');
+    pageButton.className = `pagination-button ${i === currentPage ? 'active' : ''}`;
+    pageButton.textContent = i;
+    pageButton.addEventListener('click', () => {
+      renderPortfolio(activeFilter, i);
+    });
+    pagination.appendChild(pageButton);
+  }
+
+  // Next button
+  const nextButton = document.createElement('button');
+  nextButton.className = 'pagination-button';
+  nextButton.textContent = '›';
+  nextButton.disabled = currentPage === totalPages;
+  nextButton.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      renderPortfolio(activeFilter, currentPage + 1);
+    }
+  });
+  pagination.appendChild(nextButton);
 }
 
 function initPortfolio() {
@@ -132,18 +323,19 @@ function initPortfolio() {
     button.addEventListener('click', () => {
       const filter = button.getAttribute('data-filter');
       activeFilter = filter;
+      currentPage = 1;
       
       // Update active state
       filterButtons.forEach(btn => btn.classList.remove('active'));
       button.classList.add('active');
       
       // Render filtered items
-      renderPortfolio(filter);
+      renderPortfolio(filter, 1);
     });
   });
 
   // Initial render
-  renderPortfolio('all');
+  renderPortfolio('all', 1);
 }
 
 // Reviews slider functionality
@@ -260,6 +452,8 @@ function hideLogoAnimation() {
       logoAnimationSection.style.transition = 'opacity 0.5s ease-out';
       setTimeout(() => {
         logoAnimationSection.style.display = 'none';
+        // Unblock scroll after animation is hidden
+        document.body.classList.remove('logo-animation-active');
       }, 500);
     }, 3000);
   }
@@ -267,6 +461,9 @@ function hideLogoAnimation() {
 
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+  // Block scroll immediately when page loads (for logo animation)
+  document.body.classList.add('logo-animation-active');
+  
   initPortfolio();
   initReviews();
   initScrollAnimations();

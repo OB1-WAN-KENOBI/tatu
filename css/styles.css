@@ -83,6 +83,7 @@ h3 {
 
 p {
   margin-bottom: var(--spacing-sm);
+  cursor: default;
 }
 
 a {
@@ -392,6 +393,11 @@ button {
 }
 
 /* Logo Animation Section */
+body.logo-animation-active {
+  overflow: hidden;
+  height: 100vh;
+}
+
 .logo-animation {
   width: 100%;
   min-height: 100vh;
@@ -567,6 +573,9 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
 }
 
 .gallery-item {
@@ -624,6 +633,49 @@ button {
   color: var(--text-secondary);
   text-align: center;
   font-size: 0.9rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+.pagination-button {
+  min-width: 40px;
+  height: 40px;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: var(--bg-card);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: var(--purple-primary);
+  border-color: var(--purple-primary);
+  transform: translateY(-2px);
+}
+
+.pagination-button.active {
+  background-color: var(--purple-primary);
+  border-color: var(--purple-primary);
+  color: var(--text-primary);
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* About Section */
@@ -1053,6 +1105,7 @@ button {
   margin-bottom: var(--spacing-sm);
   font-family: 'Darumadrop One', cursive;
   font-size: 38px;
+  animation: fadeIn 1s ease-out, purpleGlow 3s ease-in-out infinite;
 }
 
 .footer-section h4 {
@@ -1181,6 +1234,18 @@ button {
 
   .gallery-image-wrapper {
     height: 250px;
+  }
+
+  .pagination {
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-lg);
+  }
+
+  .pagination-button {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    padding: var(--spacing-xs);
   }
 
   .filters {
