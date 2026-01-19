@@ -459,11 +459,69 @@ function hideLogoAnimation() {
   }
 }
 
+// Header functionality
+function initHeader() {
+  const header = document.getElementById('header');
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const headerNav = document.getElementById('headerNav');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // Add scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Mobile menu toggle
+  if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenuToggle.classList.toggle('active');
+      headerNav.classList.toggle('active');
+      document.body.style.overflow = headerNav.classList.contains('active') ? 'hidden' : '';
+    });
+  }
+
+  // Close mobile menu when clicking on a link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (headerNav.classList.contains('active')) {
+        mobileMenuToggle.classList.remove('active');
+        headerNav.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Smooth scroll for anchor links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          const headerHeight = header.offsetHeight;
+          const targetPosition = targetElement.offsetTop - headerHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
+}
+
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   // Block scroll immediately when page loads (for logo animation)
   document.body.classList.add('logo-animation-active');
   
+  initHeader();
   initPortfolio();
   initReviews();
   initScrollAnimations();
