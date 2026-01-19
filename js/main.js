@@ -250,10 +250,26 @@ function setCurrentYear() {
   }
 }
 
+// Hide logo animation section after animation completes
+function hideLogoAnimation() {
+  const logoAnimationSection = document.querySelector('.logo-animation');
+  if (logoAnimationSection) {
+    // Last animation ends at 1.6s delay + 1s duration = 2.6s, add extra time for smooth transition
+    setTimeout(() => {
+      logoAnimationSection.style.opacity = '0';
+      logoAnimationSection.style.transition = 'opacity 0.5s ease-out';
+      setTimeout(() => {
+        logoAnimationSection.style.display = 'none';
+      }, 500);
+    }, 3000);
+  }
+}
+
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   initPortfolio();
   initReviews();
   initScrollAnimations();
   setCurrentYear();
+  hideLogoAnimation();
 });
