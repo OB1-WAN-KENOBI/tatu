@@ -491,7 +491,7 @@ body.logo-animation-active {
 .hero-subtitle {
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   animation: fadeIn 1s ease-out 0.3s both;
 }
@@ -518,6 +518,8 @@ body.logo-animation-active {
 .hero-button:active {
   transform: translateY(0);
 }
+
+
 
 /* Portfolio Section */
 .portfolio {
@@ -757,8 +759,18 @@ body.logo-animation-active {
 .services h2 {
   text-align: center;
   color: var(--text-primary);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xs);
   font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.free-consultation {
+  margin-top: var(--spacing-md);
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: var(--text-primary);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 1s ease-out, purpleGlow 3s ease-in-out infinite;
+  font-weight: 500;
+  text-align: center;
 }
 
 .services-grid {
@@ -1008,6 +1020,15 @@ body.logo-animation-active {
   color: var(--text-secondary);
   font-size: 1.125rem;
   line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.contacts-free-consultation {
+  font-size: 1rem;
+  color: var(--purple-primary);
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
 }
 
 .contacts-buttons {
