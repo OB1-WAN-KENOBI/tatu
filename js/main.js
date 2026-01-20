@@ -2,190 +2,163 @@
 const portfolioItems = [
   {
     id: 1,
-    image:
-      "assets/images/tattoo-1.webp",
+    image: "assets/images/tattoo-1.webp",
     alt: "Тату в стиле реализм - портрет",
     title: "Реалистичный портрет",
   },
   {
     id: 2,
-    image:
-      "assets/images/tattoo-2.webp",
+    image: "assets/images/tattoo-2.webp",
     alt: "Минималистичная татуировка - геометрия",
     title: "Геометрический минимализм",
   },
   {
     id: 3,
-    image:
-      "assets/images/tattoo-3.webp",
+    image: "assets/images/tattoo-3.webp",
     alt: "Олдскул татуировка - якорь",
     title: "Классический олдскул",
   },
   {
     id: 4,
-    image:
-      "assets/images/tattoo-4.webp",
+    image: "assets/images/tattoo-4.webp",
     alt: "Реалистичная татуировка - природа",
     title: "Природа в реализме",
   },
   {
     id: 5,
-    image:
-      "assets/images/tattoo-5.webp",
+    image: "assets/images/tattoo-5.webp",
     alt: "Минималистичная татуировка - линии",
     title: "Линейный минимализм",
   },
   {
     id: 6,
-    image:
-      "assets/images/tattoo-6.webp",
+    image: "assets/images/tattoo-6.webp",
     alt: "Олдскул татуировка - роза",
     title: "Роза в олдскуле",
   },
   {
     id: 7,
-    image:
-      "assets/images/tattoo-7.webp",
+    image: "assets/images/tattoo-7.webp",
     alt: "Реалистичная татуировка - животное",
     title: "Реалистичное животное",
   },
   {
     id: 8,
-    image:
-      "assets/images/tattoo-8.webp",
+    image: "assets/images/tattoo-8.webp",
     alt: "Минималистичная татуировка - символы",
     title: "Символический минимализм",
   },
   {
     id: 9,
-    image:
-      "assets/images/tattoo-9.webp",
+    image: "assets/images/tattoo-9.webp",
     alt: "Олдскул татуировка - корабль",
     title: "Морская тематика",
   },
   {
     id: 10,
-    image:
-      "assets/images/tattoo-10.webp",
+    image: "assets/images/tattoo-10.webp",
     alt: "Реалистичная татуировка - цветы",
     title: "Реалистичные цветы",
   },
   {
     id: 11,
-    image:
-      "assets/images/tattoo-11.webp",
+    image: "assets/images/tattoo-11.webp",
     alt: "Минималистичная татуировка - точки",
     title: "Точечный минимализм",
   },
   {
     id: 12,
-    image:
-      "assets/images/tattoo-12.webp",
+    image: "assets/images/tattoo-12.webp",
     alt: "Олдскул татуировка - череп",
     title: "Классический череп",
   },
   {
     id: 13,
-    image:
-      "assets/images/tattoo-13.webp",
+    image: "assets/images/tattoo-13.webp",
     alt: "Реалистичная татуировка - птица",
     title: "Реалистичная птица",
   },
   {
     id: 14,
-    image:
-      "assets/images/tattoo-14.webp",
+    image: "assets/images/tattoo-14.webp",
     alt: "Минималистичная татуировка - стрелки",
     title: "Геометрические стрелки",
   },
   {
     id: 15,
-    image:
-      "assets/images/tattoo-15.webp",
+    image: "assets/images/tattoo-15.webp",
     alt: "Олдскул татуировка - сердце",
     title: "Сердце в олдскуле",
   },
   {
     id: 16,
-    image:
-      "assets/images/tattoo-16.webp",
+    image: "assets/images/tattoo-16.webp",
     alt: "Реалистичная татуировка - пейзаж",
     title: "Реалистичный пейзаж",
   },
   {
     id: 17,
-    image:
-      "assets/images/tattoo-17.webp",
+    image: "assets/images/tattoo-17.webp",
     alt: "Минималистичная татуировка - волны",
     title: "Волны минимализм",
   },
   {
     id: 18,
-    image:
-      "assets/images/tattoo-18.webp",
+    image: "assets/images/tattoo-18.webp",
     alt: "Олдскул татуировка - ласточка",
     title: "Ласточка олдскул",
   },
   {
     id: 19,
-    image:
-      "assets/images/tattoo-19.webp",
+    image: "assets/images/tattoo-19.webp",
     alt: "Реалистичная татуировка - портрет девушки",
     title: "Портрет в реализме",
   },
   {
     id: 20,
-    image:
-      "assets/images/tattoo-20.webp",
+    image: "assets/images/tattoo-20.webp",
     alt: "Минималистичная татуировка - звезды",
     title: "Звездное небо",
   },
   {
     id: 21,
-    image:
-      "assets/images/tattoo-21.webp",
+    image: "assets/images/tattoo-21.webp",
     alt: "Олдскул татуировка - кинжал",
     title: "Кинжал олдскул",
   },
   {
     id: 22,
-    image:
-      "assets/images/tattoo-22.webp",
+    image: "assets/images/tattoo-22.webp",
     alt: "Реалистичная татуировка - дракон",
     title: "Реалистичный дракон",
   },
   {
     id: 23,
-    image:
-      "assets/images/tattoo-23.webp",
+    image: "assets/images/tattoo-23.webp",
     alt: "Минималистичная татуировка - треугольники",
     title: "Геометрические формы",
   },
   {
     id: 24,
-    image:
-      "assets/images/tattoo-24.webp",
+    image: "assets/images/tattoo-24.webp",
     alt: "Олдскул татуировка - змея",
     title: "Змея в олдскуле",
   },
   {
     id: 25,
-    image:
-      "assets/images/tattoo-25.webp",
+    image: "assets/images/tattoo-25.webp",
     alt: "Реалистичная татуировка - лес",
     title: "Лесной пейзаж",
   },
   {
     id: 26,
-    image:
-      "assets/images/tattoo-26.webp",
+    image: "assets/images/tattoo-26.webp",
     alt: "Минималистичная татуировка - луна",
     title: "Лунная тематика",
   },
   {
     id: 27,
-    image:
-      "assets/images/tattoo-27.webp",
+    image: "assets/images/tattoo-27.webp",
     alt: "Олдскул татуировка - якорь с лентой",
     title: "Классический якорь",
   },
@@ -263,7 +236,10 @@ function renderPortfolio(page = 1) {
       item.addEventListener("click", () => {
         const img = item.querySelector("img");
         if (img) {
-          openImageModal(img.getAttribute("data-full-image"), img.getAttribute("alt"));
+          openImageModal(
+            img.getAttribute("data-full-image"),
+            img.getAttribute("alt"),
+          );
         }
       });
     });
