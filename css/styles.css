@@ -10,9 +10,7 @@ html {
 }
 
 body {
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
-    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-primary);
@@ -74,7 +72,7 @@ h6 {
 h1 {
   font-size: clamp(2rem, 5vw, 3.5rem);
   text-transform: uppercase;
-  font-family: "Darumadrop One", cursive;
+  font-family: "Darumadrop One", sans-serif;
   animation: purpleGlow 3s ease-in-out infinite;
 }
 
@@ -1002,16 +1000,39 @@ body.logo-animation-active {
 }
 
 .about-quote {
+  display: flex;
   margin: var(--spacing-md) 0;
   padding: var(--spacing-lg);
   border-left: 4px solid var(--purple-primary);
   background: var(--bg-card);
   border-radius: var(--radius-md);
-  color: var(--text-primary);
-  font-style: italic;
-  font-size: 1.125rem;
+  font-size: 2rem;
   line-height: 1.8;
   position: relative;
+  font-family: "Shantell Sans", sans-serif;
+  text-shadow:
+    0 0 6px currentColor,
+    0 0 12px currentColor,
+    0 0 22px currentColor;
+  animation: glow 3s ease-in-out infinite alternate;
+  letter-spacing: 8px;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes glow {
+  from {
+    color: #ff005e;
+  }
+  to {
+    color: var(--purple-secondary);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-quote {
+    animation: none;
+  }
 }
 
 .about-quote::before {
@@ -1702,8 +1723,7 @@ body.logo-animation-active {
   }
 
   .about-quote {
-    font-size: 1rem;
-    padding: var(--spacing-md);
+    font-size: 1.5rem;
   }
 
   .services-grid {
@@ -1728,6 +1748,7 @@ body.logo-animation-active {
 
   .review-text {
     font-size: 1rem;
+    margin: 0 auto;
   }
 
   .slider-button {
