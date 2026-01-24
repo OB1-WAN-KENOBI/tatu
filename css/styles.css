@@ -1204,7 +1204,7 @@ body.logo-animation-active {
   color: var(--purple-primary);
   position: absolute;
   top: -20px;
-  left: -10px;
+  left: 0;
   opacity: 0.3;
   font-family: serif;
 }
@@ -1215,8 +1215,8 @@ body.logo-animation-active {
   color: var(--purple-primary);
   position: absolute;
   bottom: -40px;
-  right: -10px;
   opacity: 0.3;
+  right: 0;
   font-family: serif;
 }
 
@@ -1224,7 +1224,7 @@ body.logo-animation-active {
   color: var(--purple-primary);
   font-weight: 600;
   font-size: 1.125rem;
-  margin-top: var(--spacing-sm);
+  /* margin-top: var(--spacing-sm); */
 }
 
 .slider-button {
