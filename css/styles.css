@@ -817,6 +817,10 @@ body.logo-animation-active {
   font-size: 0.9rem;
 }
 
+.gallery-title {
+  margin: 0 auto;
+}
+
 /* Image Modal */
 .image-modal {
   position: fixed;
