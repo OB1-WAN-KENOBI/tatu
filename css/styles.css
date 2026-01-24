@@ -136,10 +136,6 @@ button {
   padding: var(--spacing-2xl) 0;
 }
 
-.text-center {
-  text-align: center;
-}
-
 /* Header */
 .header {
   position: fixed;
@@ -236,24 +232,6 @@ button {
 
 .header-logo-svg:hover {
   opacity: 1;
-}
-
-.header-button {
-  padding: var(--spacing-xs) var(--spacing-md);
-  background: var(--purple-primary);
-  color: var(--text-primary);
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all var(--transition-normal);
-  white-space: nowrap;
-}
-
-.header-button:hover {
-  background: var(--purple-secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--purple-glow);
 }
 
 .mobile-menu-toggle {
@@ -561,14 +539,6 @@ button {
   animation: animate-svg-fill-9 1s ease-in 1.6s both;
 }
 
-.fade-in {
-  animation: fadeIn var(--transition-slow) ease-out;
-}
-
-.slide-up {
-  animation: slideUp 0.6s ease-out;
-}
-
 /* Logo Animation Section */
 body.logo-animation-active {
   overflow: hidden;
@@ -711,42 +681,6 @@ body.logo-animation-active {
   font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-xl);
-  flex-wrap: wrap;
-}
-
-.filter-button {
-  padding: var(--spacing-sm) var(--spacing-md);
-  background: var(--bg-card);
-  color: var(--text-secondary);
-  border: 2px solid transparent;
-  border-radius: var(--radius-md);
-  font-size: 1rem;
-  font-weight: 500;
-  transition: all var(--transition-normal);
-  cursor: pointer;
-}
-
-.filter-button:hover {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-  border-color: var(--purple-primary);
-}
-
-.filter-button.active {
-  background: var(--purple-primary);
-  color: var(--text-primary);
-  border-color: var(--purple-primary);
-}
-
-.filter-button.active:hover {
-  background: var(--purple-secondary);
-}
-
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -815,9 +749,6 @@ body.logo-animation-active {
   color: var(--text-secondary);
   text-align: center;
   font-size: 0.9rem;
-}
-
-.gallery-title {
   margin: 0 auto;
 }
 
@@ -1418,14 +1349,6 @@ body.logo-animation-active {
   margin-bottom: var(--spacing-md);
 }
 
-.contacts-free-consultation {
-  font-size: 1rem;
-  color: var(--purple-primary);
-  font-weight: 600;
-  margin-bottom: var(--spacing-lg);
-  text-align: center;
-}
-
 .contacts-buttons {
   display: flex;
   flex-direction: column;
@@ -1711,15 +1634,6 @@ body.logo-animation-active {
     height: 36px;
     font-size: 0.9rem;
     padding: var(--spacing-xs);
-  }
-
-  .filters {
-    gap: var(--spacing-xs);
-  }
-
-  .filter-button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: 0.9rem;
   }
 
   .about-description {
