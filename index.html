@@ -27,7 +27,7 @@
   <!-- Preload critical resources -->
   <link rel="preload" href="css/styles.css" as="style" />
   <link rel="preload" href="js/main.js" as="script" crossorigin />
-  <link rel="preload" href="assets/bg-2.webp" as="image" />
+  <link rel="preload" href="assets/bg-2.webp" as="image" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -113,7 +113,8 @@
         </nav>
         <div class="header-actions">
           <div class="header-logo-image">
-            <img src="assets/kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="header-logo-svg" />
+            <img src="assets/kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="header-logo-svg" loading="eager"
+              decoding="async" />
           </div>
           <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Меню">
             <span></span>
@@ -162,7 +163,7 @@
   <!-- Hero Section -->
   <section class="hero" id="hero">
     <div class="hero-background">
-      <img src="assets/bg-2.webp" alt="Тату-мастер за работой в Самаре" />
+      <img src="assets/bg-2.webp" alt="Тату-мастер за работой в Самаре" fetchpriority="high" />
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -195,7 +196,8 @@
       <h2>О мастере</h2>
       <div class="about-content">
         <div class="about-image-wrapper">
-          <img src="assets/images/kotova.webp" alt="Фото тату-мастера Tattoo Kotova в Самаре" />
+          <img src="assets/images/kotova.webp" alt="Фото тату-мастера Tattoo Kotova в Самаре" loading="lazy"
+            decoding="async" />
         </div>
         <div class="about-text">
           <p class="about-description">
@@ -355,7 +357,8 @@
             </iframe>
           </div>
           <div class="contacts-logo">
-            <img src="assets/kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="logo-image" />
+            <img src="assets/kotovaLogo2.svg" alt="Tattoo-Kotova Logo" class="logo-image" loading="lazy"
+              decoding="async" />
           </div>
         </div>
       </div>

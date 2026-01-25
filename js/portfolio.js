@@ -31,7 +31,7 @@ function renderPortfolio(page = 1) {
         (item) => `
       <div class="gallery-item">
         <div class="gallery-image-wrapper">
-          <img src="${item.image}" alt="${item.alt}" loading="lazy" data-full-image="${item.image}" onerror="this.onerror=null; this.src='assets/images/tattoo-1.webp';">
+          <img src="${item.image}" alt="${item.alt}" loading="lazy" decoding="async" data-full-image="${item.image}" onerror="this.onerror=null; this.src='assets/images/tattoo-1.webp';">
         </div>
         <p class="gallery-title">${item.title}</p>
       </div>
@@ -106,13 +106,13 @@ export function initPortfolio() {
         // Try to find a focusable element, or make gallery-item focusable temporarily
         const focusableElement = galleryItem.querySelector("a, button, [tabindex]");
         let elementToFocus = focusableElement;
-        
+
         if (!elementToFocus) {
           // Make gallery-item temporarily focusable
           galleryItem.setAttribute("tabindex", "-1");
           elementToFocus = galleryItem;
         }
-        
+
         openImageModal(
           img.getAttribute("data-full-image"),
           img.getAttribute("alt"),
