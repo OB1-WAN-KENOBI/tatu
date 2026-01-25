@@ -1624,6 +1624,10 @@ body.logo-animation-active {
     height: 250px;
   }
 
+  .gallery-image-wrapper img {
+    transition: none;
+  }
+
   .pagination {
     gap: var(--spacing-xs);
     margin-top: var(--spacing-lg);
