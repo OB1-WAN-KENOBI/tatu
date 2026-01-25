@@ -1620,6 +1620,10 @@ body.logo-animation-active {
     gap: var(--spacing-md);
   }
 
+  .gallery-item {
+    transition: none;
+  }
+
   .gallery-image-wrapper {
     height: 250px;
   }
