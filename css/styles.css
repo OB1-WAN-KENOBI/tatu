@@ -679,6 +679,7 @@ body.logo-animation-active {
   height: auto;
   filter: drop-shadow(2px 2px 8px rgba(139, 92, 246, 0.5)) drop-shadow(0 0 20px rgba(139, 92, 246, 0.3));
   animation: svgGlow 3s ease-in-out infinite;
+  color: white;
 }
 
 @keyframes svgGlow {
