@@ -1,3 +1,16 @@
+# Редиректы
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Редирект HTTP → HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+  # Редирект www → без www
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # Кеширование статических ресурсов
 <IfModule mod_expires.c>
   ExpiresActive On
