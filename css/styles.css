@@ -136,6 +136,19 @@ button {
   padding: var(--spacing-2xl) 0;
 }
 
+/* Screen reader only - visually hidden but accessible for SEO and screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* Header */
 .header {
   position: fixed;
@@ -595,6 +608,9 @@ body.logo-animation-active {
 .hero {
   position: relative;
   min-height: 100vh;
+  /* Fallback для старых браузеров */
+  min-height: 100dvh;
+  /* Динамическая высота viewport */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -602,12 +618,19 @@ body.logo-animation-active {
 }
 
 .hero-background {
-  position: absolute;
+  position: fixed;
+  /* Фиксируем фон */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  height: 100dvh;
+  /* Используем dvh для фиксированной высоты */
   z-index: 1;
+  /* Оптимизация для производительности */
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hero-background img {
@@ -617,18 +640,27 @@ body.logo-animation-active {
   position: absolute;
   top: 0;
   left: 0;
+  /* Предотвращаем изменение размера при скролле */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* Фиксируем размер изображения */
+  will-change: auto;
 }
 
 .hero-overlay {
-  position: absolute;
+  position: fixed;
+  /* Фиксируем overlay вместе с фоном */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  height: 100dvh;
   background: linear-gradient(135deg,
       rgba(10, 10, 10, 0.8) 0%,
       rgba(139, 92, 246, 0.3) 100%);
   z-index: 2;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .hero-content {
@@ -1669,7 +1701,25 @@ body.logo-animation-active {
   }
 
   .hero {
-    min-height: 80vh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 100dvh;
+    /* Фиксируем высоту на мобильных */
+  }
+
+  .hero-background {
+    position: fixed;
+    height: 100dvh;
+  }
+
+  .hero-background img {
+    transform: translateZ(0) scale(1);
+    will-change: auto;
+  }
+
+  .hero-overlay {
+    position: fixed;
+    height: 100dvh;
   }
 
   .hero-content {
