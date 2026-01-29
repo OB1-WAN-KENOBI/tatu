@@ -32,31 +32,28 @@ function initCanvas() {
 }
 
 function handleMouseDown(e) {
-  if (!tattooImage) return;
+  if (!tattooImage || !bodyImage) return;
+  
   const rect = canvas.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = (e.clientX - rect.left) * scaleX;
+  const y = (e.clientY - rect.top) * scaleY;
   
-  // Проверка, клик по области тату
-  const centerX = canvas.width / 2 + tattooState.x;
-  const centerY = canvas.height / 2 + tattooState.y;
-  const distance = Math.sqrt(
-    Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)
-  );
-  
-  if (distance < 100) {
-    tattooState.isDragging = true;
-    tattooState.dragStartX = x - tattooState.x;
-    tattooState.dragStartY = y - tattooState.y;
-    canvas.style.cursor = 'grabbing';
-  }
+  // Разрешаем перетаскивание в любом месте canvas, если есть тату
+  tattooState.isDragging = true;
+  tattooState.dragStartX = x - tattooState.x;
+  tattooState.dragStartY = y - tattooState.y;
+  canvas.style.cursor = 'grabbing';
 }
 
 function handleMouseMove(e) {
   if (tattooState.isDragging) {
     const rect = canvas.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     
     tattooState.x = x - tattooState.dragStartX;
     tattooState.y = y - tattooState.dragStartY;
@@ -66,7 +63,9 @@ function handleMouseMove(e) {
 
 function handleMouseUp() {
   tattooState.isDragging = false;
-  if (canvas) {
+  if (canvas && tattooImage && bodyImage) {
+    canvas.style.cursor = 'grab';
+  } else if (canvas) {
     canvas.style.cursor = 'default';
   }
 }
@@ -132,6 +131,43 @@ function resetTattooPosition() {
   updateSliders();
 }
 
+function clearAll() {
+  // Очищаем изображения
+  bodyImage = null;
+  tattooImage = null;
+  
+  // Очищаем input файлы
+  const bodyInput = document.getElementById('bodyPhotoInput');
+  const tattooInput = document.getElementById('tattooSketchInput');
+  if (bodyInput) bodyInput.value = '';
+  if (tattooInput) tattooInput.value = '';
+  
+  // Скрываем панель управления
+  const controlsPanel = document.getElementById('tryonControlsPanel');
+  if (controlsPanel) {
+    controlsPanel.style.display = 'none';
+  }
+  
+  // Показываем placeholder
+  const placeholder = document.getElementById('tryonPlaceholder');
+  if (placeholder) {
+    placeholder.style.display = 'flex';
+  }
+  
+  // Очищаем canvas
+  if (ctx && canvas) {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Возвращаем canvas к исходному размеру
+    canvas.width = 800;
+    canvas.height = 600;
+    // Сбрасываем курсор
+    canvas.style.cursor = 'default';
+  }
+  
+  // Сбрасываем состояние
+  resetTattooPosition();
+}
+
 function draw() {
   if (!ctx) return;
   
@@ -169,12 +205,19 @@ function draw() {
     );
     
     ctx.restore();
+    
+    // Устанавливаем курсор для перетаскивания
+    if (!tattooState.isDragging) {
+      canvas.style.cursor = 'grab';
+    }
   }
   
   // Скрываем placeholder
   const placeholder = document.getElementById('tryonPlaceholder');
   if (placeholder && bodyImage && tattooImage) {
     placeholder.style.display = 'none';
+  } else if (placeholder) {
+    placeholder.style.display = 'flex';
   }
 }
 
@@ -294,9 +337,7 @@ function setupEventListeners() {
   
   if (resetButton) {
     resetButton.addEventListener('click', () => {
-      resetTattooPosition();
-      updateSliders();
-      draw();
+      clearAll();
     });
   }
   
