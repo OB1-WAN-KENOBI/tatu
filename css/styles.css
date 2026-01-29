@@ -1860,3 +1860,218 @@ body.logo-animation-active {
     padding: var(--spacing-sm) var(--spacing-md);
   }
 }
+
+/* Tattoo Try-On Section */
+.tattoo-tryon {
+  background: var(--bg-secondary);
+  padding: var(--spacing-2xl) 0;
+}
+
+.tattoo-tryon h2 {
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.tryon-description {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin-bottom: var(--spacing-xl);
+}
+
+.tryon-wrapper {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.tryon-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.tryon-upload-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.tryon-upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md);
+  background: var(--bg-card);
+  border: 2px dashed var(--purple-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.tryon-upload-label:hover {
+  border-color: var(--purple-light);
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.tryon-upload-icon {
+  font-size: 2rem;
+}
+
+.tryon-upload-input {
+  display: none;
+}
+
+.tryon-controls-panel {
+  background: var(--bg-card);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--purple-primary);
+}
+
+.tryon-control-item {
+  margin-bottom: var(--spacing-md);
+}
+
+.tryon-control-item label {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.tryon-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-secondary);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.tryon-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--purple-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tryon-slider::-webkit-slider-thumb:hover {
+  background: var(--purple-light);
+  transform: scale(1.2);
+}
+
+.tryon-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--purple-primary);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-fast);
+}
+
+.tryon-slider::-moz-range-thumb:hover {
+  background: var(--purple-light);
+  transform: scale(1.2);
+}
+
+.tryon-reset-btn,
+.tryon-download-btn {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  margin-top: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all var(--transition-normal);
+}
+
+.tryon-reset-btn {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 2px solid var(--purple-primary);
+}
+
+.tryon-reset-btn:hover {
+  background: var(--purple-primary);
+  color: var(--text-primary);
+}
+
+.tryon-download-btn {
+  background: var(--purple-primary);
+  color: var(--text-primary);
+  box-shadow: 0 4px 15px var(--purple-glow);
+}
+
+.tryon-download-btn:hover {
+  background: var(--purple-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--purple-glow);
+}
+
+.tryon-canvas-wrapper {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid var(--purple-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+#tryonCanvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: grab;
+}
+
+#tryonCanvas:active {
+  cursor: grabbing;
+}
+
+.tryon-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 1024px) {
+  .tryon-wrapper {
+    grid-template-columns: 1fr;
+  }
+  
+  .tryon-controls {
+    order: 2;
+  }
+  
+  .tryon-canvas-wrapper {
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .tryon-controls-panel {
+    padding: var(--spacing-md);
+  }
+  
+  #tryonCanvas {
+    max-width: 100%;
+  }
+}

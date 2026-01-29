@@ -4,6 +4,7 @@ import { initImageModal } from "./imageModal.js";
 import { initReviews } from "./reviews.js";
 import { initHeader } from "./header.js";
 import { initScrollAnimations } from "./scrollAnimations.js";
+import { initTattooTryOn } from "./tattooTryOn.js";
 import { setCurrentYear, hideLogoAnimation } from "./utils/dom.js";
 
 // Initialize everything when DOM is ready
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initImageModal();
   initReviews();
   initScrollAnimations();
+  initTattooTryOn();
   setCurrentYear();
   hideLogoAnimation();
 });

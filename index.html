@@ -192,6 +192,7 @@
           <a href="#portfolio" class="nav-link">Портфолио</a>
           <a href="#about" class="nav-link">О мастере</a>
           <a href="#services" class="nav-link">Услуги</a>
+          <a href="#tryon" class="nav-link">Примерка тату</a>
           <a href="#reviews" class="nav-link">Отзывы</a>
           <a href="#contacts" class="nav-link">Контакты</a>
         </nav>
@@ -375,6 +376,57 @@
           <div class="service-price">от 5000 ₽</div>
           <a href="https://t.me/l_kotova63" target="_blank" rel="noopener noreferrer"
             class="service-button">Записаться</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tattoo Try-On Section -->
+  <section class="tattoo-tryon section" id="tryon">
+    <div class="container">
+      <h2>Примерка тату</h2>
+      <p class="tryon-description">
+        Загрузите фото части тела и эскиз тату, чтобы увидеть, как будет выглядеть татуировка
+      </p>
+
+      <div class="tryon-wrapper">
+        <div class="tryon-controls">
+          <div class="tryon-upload-group">
+            <label for="bodyPhotoInput" class="tryon-upload-label">
+              <span class="tryon-upload-icon">📷</span>
+              <span>Загрузить фото части тела</span>
+              <input type="file" id="bodyPhotoInput" accept="image/*" class="tryon-upload-input" />
+            </label>
+            <label for="tattooSketchInput" class="tryon-upload-label">
+              <span class="tryon-upload-icon">🎨</span>
+              <span>Загрузить эскиз тату</span>
+              <input type="file" id="tattooSketchInput" accept="image/*" class="tryon-upload-input" />
+            </label>
+          </div>
+
+          <div class="tryon-controls-panel" id="tryonControlsPanel" style="display: none;">
+            <div class="tryon-control-item">
+              <label for="scaleSlider">Масштаб: <span id="scaleValue">100</span>%</label>
+              <input type="range" id="scaleSlider" min="10" max="200" value="100" class="tryon-slider" />
+            </div>
+            <div class="tryon-control-item">
+              <label for="rotationSlider">Поворот: <span id="rotationValue">0</span>°</label>
+              <input type="range" id="rotationSlider" min="-180" max="180" value="0" class="tryon-slider" />
+            </div>
+            <div class="tryon-control-item">
+              <label for="opacitySlider">Прозрачность: <span id="opacityValue">100</span>%</label>
+              <input type="range" id="opacitySlider" min="0" max="100" value="100" class="tryon-slider" />
+            </div>
+            <button id="resetButton" class="tryon-reset-btn">Сбросить</button>
+            <button id="downloadButton" class="tryon-download-btn">Скачать результат</button>
+          </div>
+        </div>
+
+        <div class="tryon-canvas-wrapper">
+          <canvas id="tryonCanvas"></canvas>
+          <div class="tryon-placeholder" id="tryonPlaceholder">
+            <p>Загрузите фото части тела и эскиз тату</p>
+          </div>
         </div>
       </div>
     </div>
