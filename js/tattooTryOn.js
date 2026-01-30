@@ -18,8 +18,25 @@ function initCanvas() {
   if (!canvas) return;
   
   ctx = canvas.getContext('2d');
-  canvas.width = 800;
-  canvas.height = 600;
+  
+  // Устанавливаем фиксированный размер canvas
+  const setCanvasSize = () => {
+    const wrapper = canvas.parentElement;
+    if (wrapper) {
+      const rect = wrapper.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+      draw();
+    } else {
+      canvas.width = 800;
+      canvas.height = 600;
+    }
+  };
+  
+  setCanvasSize();
+  
+  // Обновляем размер при изменении размера окна
+  window.addEventListener('resize', setCanvasSize);
   
   // Обработка перетаскивания
   canvas.addEventListener('mousedown', handleMouseDown);
@@ -106,18 +123,7 @@ function loadImage(file, type) {
 }
 
 function resizeCanvas() {
-  if (!bodyImage) return;
-  
-  const maxWidth = 800;
-  const maxHeight = 600;
-  const ratio = Math.min(
-    maxWidth / bodyImage.width,
-    maxHeight / bodyImage.height
-  );
-  
-  canvas.width = bodyImage.width * ratio;
-  canvas.height = bodyImage.height * ratio;
-  
+  // Canvas теперь имеет фиксированный размер, изображение будет масштабироваться
   draw();
 }
 
@@ -157,9 +163,6 @@ function clearAll() {
   // Очищаем canvas
   if (ctx && canvas) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Возвращаем canvas к исходному размеру
-    canvas.width = 800;
-    canvas.height = 600;
     // Сбрасываем курсор
     canvas.style.cursor = 'default';
   }
@@ -169,13 +172,33 @@ function clearAll() {
 }
 
 function draw() {
-  if (!ctx) return;
+  if (!ctx || !canvas) return;
   
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
-  // Рисуем фото тела
+  // Рисуем фото тела с масштабированием под размер canvas
   if (bodyImage) {
-    ctx.drawImage(bodyImage, 0, 0, canvas.width, canvas.height);
+    // Вычисляем соотношение для вписывания изображения в canvas
+    const canvasAspect = canvas.width / canvas.height;
+    const imageAspect = bodyImage.width / bodyImage.height;
+    
+    let drawWidth, drawHeight, drawX, drawY;
+    
+    if (imageAspect > canvasAspect) {
+      // Изображение шире - подгоняем по ширине
+      drawWidth = canvas.width;
+      drawHeight = canvas.width / imageAspect;
+      drawX = 0;
+      drawY = (canvas.height - drawHeight) / 2;
+    } else {
+      // Изображение выше - подгоняем по высоте
+      drawWidth = canvas.height * imageAspect;
+      drawHeight = canvas.height;
+      drawX = (canvas.width - drawWidth) / 2;
+      drawY = 0;
+    }
+    
+    ctx.drawImage(bodyImage, drawX, drawY, drawWidth, drawHeight);
   }
   
   // Рисуем эскиз тату
@@ -191,9 +214,10 @@ function draw() {
     // Прозрачность
     ctx.globalAlpha = tattooState.opacity;
     
-    // Масштаб
-    const scaledWidth = tattooImage.width * tattooState.scale;
-    const scaledHeight = tattooImage.height * tattooState.scale;
+    // Масштаб относительно размера canvas
+    const baseScale = Math.min(canvas.width, canvas.height) / 500; // Базовый масштаб
+    const scaledWidth = tattooImage.width * tattooState.scale * baseScale;
+    const scaledHeight = tattooImage.height * tattooState.scale * baseScale;
     
     // Рисуем с центрированием
     ctx.drawImage(

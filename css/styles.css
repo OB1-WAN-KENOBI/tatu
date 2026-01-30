@@ -1952,6 +1952,7 @@ body.logo-animation-active {
   background: var(--bg-secondary);
   outline: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .tryon-slider::-webkit-slider-thumb {
@@ -2025,12 +2026,15 @@ body.logo-animation-active {
   overflow: hidden;
   border: 2px solid var(--purple-primary);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 4 / 3;
 }
 
 #tryonCanvas {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   cursor: grab;
 }
 
@@ -2056,11 +2060,11 @@ body.logo-animation-active {
   .tryon-wrapper {
     grid-template-columns: 1fr;
   }
-  
+
   .tryon-controls {
     order: 2;
   }
-  
+
   .tryon-canvas-wrapper {
     order: 1;
   }
@@ -2070,7 +2074,7 @@ body.logo-animation-active {
   .tryon-controls-panel {
     padding: var(--spacing-md);
   }
-  
+
   #tryonCanvas {
     max-width: 100%;
   }
