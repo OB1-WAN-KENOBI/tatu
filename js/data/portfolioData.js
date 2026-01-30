@@ -15,7 +15,7 @@ export const portfolioItems = [
     id: 2,
     image: "assets/images/tattoo-2.webp",
     alt: "Минималистичная геометрическая татуировка в Самаре от Tattoo-Kotova",
-    title: "Ногаф",
+    title: "Ногав",
     description:
       "Минималистичная татуировка в геометрическом стиле. Тату-мастер в Самаре. Чистые линии, современный дизайн.",
     keywords:
@@ -190,7 +190,7 @@ export const portfolioItems = [
     id: 18,
     image: "assets/images/tattoo-18.webp",
     alt: "Олдскул татуировка ласточка в Самаре - классический стиль",
-    title: "Ногаф",
+    title: "Ногав",
     description:
       "Олдскул татуировка с ласточкой. Классический морской стиль. Тату-мастер в Самаре.",
     keywords:
