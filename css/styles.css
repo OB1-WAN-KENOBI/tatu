@@ -1714,6 +1714,10 @@ body.logo-animation-active {
     transition: none;
   }
 
+.gallery-item:hover .gallery-image-wrapper img {
+  transform: none;
+}
+
   .pagination {
     gap: var(--spacing-xs);
     margin-top: var(--spacing-lg);
