@@ -179,6 +179,7 @@ button {
   text-align: center;
   color: var(--text-primary);
   margin: 0;
+  transform: translateY(calc(-1 * var(--header-height)));
   position: relative;
 }
 
