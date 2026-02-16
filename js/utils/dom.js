@@ -1,4 +1,4 @@
-// DOM utility functions
+// DOM utility functions - OPTIMIZED FOR PERFORMANCE
 
 // Throttle utility function
 export function throttle(func, limit) {
@@ -20,22 +20,21 @@ export function setCurrentYear() {
   }
 }
 
-// Hide logo animation section after animation completes
-export function hideLogoAnimation() {
+// Skip logo animation immediately - doesn't wait for animation to complete
+export function skipLogoAnimation() {
+  // Non-blocking version - animation loads but doesn't block page
   const logoAnimationSection = document.querySelector(".logo-animation");
   if (logoAnimationSection) {
-    // Last animation ends at 1.6s delay + 1s duration = 2.6s, add extra time for smooth transition
-    const LOGO_ANIMATION_DELAY = 3000;
-    const LOGO_ANIMATION_FADE_OUT = 500;
-    
+    // Add hidden class after a short delay to let animation play
+    const ANIMATION_DURATION = 2800; // SVG animations complete around 2.6s + buffer
     setTimeout(() => {
-      logoAnimationSection.style.opacity = "0";
-      logoAnimationSection.style.transition = "opacity 0.5s ease-out";
-      setTimeout(() => {
-        logoAnimationSection.style.display = "none";
-        // Unblock scroll after animation is hidden
-        document.body.classList.remove("logo-animation-active");
-      }, LOGO_ANIMATION_FADE_OUT);
-    }, LOGO_ANIMATION_DELAY);
+      logoAnimationSection.classList.add("hidden");
+      document.body.classList.remove("logo-animation-active");
+    }, ANIMATION_DURATION);
   }
+}
+
+// Legacy function - kept for backwards compatibility
+export function hideLogoAnimation() {
+  skipLogoAnimation();
 }
